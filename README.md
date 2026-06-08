@@ -1,293 +1,215 @@
-# ⚡ 智能微电网规划分析平台
-
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)
-![Plotly](https://img.shields.io/badge/Plotly-5.0+-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)
+# Mine Microgrid Simulator
 
-**专业级微电网规划分析工具 | 现代化UI | 高级可视化 | 异步计算**
+**矿区微电网规划分析平台 | Professional Microgrid Planning and Analysis Platform**
 
-*为矿区可再生能源系统提供全方位的设计、优化和经济性分析解决方案*
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-red)
+![Plotly](https://img.shields.io/badge/Plotly-5.0%2B-purple)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 </div>
 
-## 🎯 项目简介
+基于 Streamlit 和 Plotly 构建的专业级微电网规划分析平台，集成现代化 UI 设计、高级可视化和异步处理能力。专为矿区可再生能源系统设计，提供从系统建模到经济性分析的完整解决方案。
 
-基于**Streamlit**和**Plotly**构建的专业级微电网规划分析平台，集成现代化UI设计、高级可视化、异步处理等企业级功能。专为矿区可再生能源系统设计，提供从系统建模到经济性分析的完整解决方案。
+> A professional microgrid planning and analysis platform built with Streamlit and Plotly. Designed for mine-site renewable energy systems, providing end-to-end solutions from system modeling to economic analysis.
 
-### ✨ 核心特性
+---
 
-#### 🔋 **智能系统建模**
-- **精确仿真引擎** - 8760小时逐时能量平衡计算
-- **多能源支持** - 光伏、风电、储能系统集成建模
-- **真实气象数据** - 基于Open-Meteo API的实时气象数据
-- **智能调度算法** - 考虑经济性和技术约束的优化调度
+## 技术特性 | Features
 
-#### 📊 **高级数据分析**
-- **多维度KPI** - 可再生能源渗透率、自消纳率、电网独立度
-- **经济性评估** - NPV、IRR、LCOE、投资回收期分析
-- **敏感性分析** - 关键参数对系统性能的影响评估
-- **优化建议** - 基于分析结果的系统配置优化建议
+| 中文特性 | English Feature | 说明 / Description |
+|---------|----------------|-------------------|
+| 精确仿真引擎 | Simulation Engine | 8760 小时逐时能量平衡计算 |
+| 多能源支持 | Multi-Energy Support | 光伏、风电、储能系统集成建模 |
+| 实时气象数据 | Live Weather Data | 基于 Open-Meteo API 的实时气象数据 |
+| 智能调度算法 | Smart Dispatch | 考虑经济性和技术约束的优化调度 |
+| 多维度 KPI | Multi-Dimension KPIs | 可再生能源渗透率、自消纳率、电网独立度 |
+| 经济性评估 | Economic Analysis | NPV、IRR、LCOE、投资回收期分析 |
+| 敏感性分析 | Sensitivity Analysis | 关键参数对系统性能的影响评估 |
+| 交互可视化 | Interactive Visualization | 3D 能量流动、热力图、雷达图、瀑布图 |
+| 异步计算 | Async Computing | 非阻塞用户界面，6 步骤进度显示 |
+| 性能监控 | Performance Monitoring | 实时监控计算性能和系统资源使用 |
 
-#### 🎨 **现代化用户界面**
-- **企业级设计** - 渐变色彩、卡片布局、动画效果
-- **响应式设计** - 完美适配桌面端和移动端
-- **智能配置向导** - 4步骤引导式参数配置流程
-- **实时状态监控** - 系统状态、内存使用、计算进度显示
+---
 
-#### 📈 **专业级可视化**
-- **3D交互图表** - 立体能量流动轨迹分析，支持拖拽旋转
-- **动画时序分析** - 30天动画日负荷曲线，时间轴播放控制
-- **热力图分析** - 全年8760小时运行模式热力图展示
-- **雷达图评估** - 5维度系统性能对比分析
-- **瀑布图平衡** - 直观的能量来源和去向流向分析
+## 目录 | Table of Contents
 
-#### 🚀 **高级技术特性**
-- **异步计算架构** - 非阻塞用户界面，6步骤进度显示
-- **智能错误处理** - 自动重试机制、分级错误处理和恢复
-- **内存优化策略** - 大数据集分块处理、智能缓存管理
-- **性能监控系统** - 实时监控计算性能和系统资源使用
+- [数据准备 | Data Preparation](#数据准备--data-preparation)
+- [核心原理 | Core Method](#核心原理--core-method)
+- [模块文档 | Module Reference](#模块文档--module-reference)
+- [快速开始 | Quick Start](#快速开始--quick-start)
+- [输出说明 | Output](#输出说明--output)
+- [安装与运行 | Installation](#安装与运行--installation)
+- [Docker 使用 | Docker Usage](#docker-使用--docker-usage)
+- [项目结构 | Project Structure](#项目结构--project-structure)
+- [引用 | Citation](#引用--citation)
+- [许可证 | License](#许可证--license)
 
-## 🚀 快速开始
+---
 
-### **系统要求**
-- **Python**: 3.8 或更高版本
-- **内存**: 建议 4GB+ RAM
-- **浏览器**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
-- **网络**: 需要访问Open-Meteo气象数据API
+## 数据准备 | Data Preparation
 
-### **安装依赖**
+工具需要以下输入数据：
+
+- **矿山负荷曲线**：CSV 格式的逐时用电数据
+- **气象数据**：通过 Open-Meteo API 自动获取（需网络连接）
+- **设备参数**：光伏板、风机、储能的配置参数
+
+> Required inputs include mine load profiles (CSV), weather data (auto-fetched via Open-Meteo API), and equipment configuration parameters.
+
+---
+
+## 核心原理 | Core Method
+
+平台基于能量平衡模型，逐小时模拟微电网的运行状态。光伏和风电出力分别通过 pvlib 和 windpowerlib 库计算。储能系统采用荷电状态（SOC）管理策略。经济性评估基于净现值（NPV）、内部收益率（IRR）和平准化能源成本（LCOE）等指标。
+
+> The platform simulates microgrid operation on an hourly basis using energy balance modeling. Solar and wind power are calculated using pvlib and windpowerlib. Economic analysis is based on NPV, IRR, and LCOE.
+
+---
+
+## 模块文档 | Module Reference
+
+| 模块 | 功能 |
+|------|------|
+| `app.py` | Streamlit 主应用入口，页面布局与路由 |
+| `modules/simulation_engine.py` | 光伏/风电出力计算与能量平衡仿真 |
+| `modules/data_handler.py` | 负荷数据加载与气象 API 调用 |
+| `modules/results_analyzer.py` | 结果展示、KPI 计算与图表生成 |
+| `modules/advanced_visualization.py` | 3D 图表、动画、热力图等高级可视化 |
+| `modules/advanced_ui.py` | 高级 UI 组件（状态仪表板、KPI 面板） |
+| `modules/config.py` | 默认配置与设备参数管理 |
+| `modules/async_processor.py` | 异步任务管理与进度显示 |
+| `modules/error_handler.py` | 错误捕获、自动重试与恢复 |
+| `modules/memory_optimizer.py` | 大数据分块处理与缓存管理 |
+
+---
+
+## 快速开始 | Quick Start
+
+```bash
+# 安装依赖
+pip install -r requirements.txt
+
+# 启动应用
+streamlit run app.py
+```
+
+打开浏览器访问 http://localhost:8501。
+
+---
+
+## 输出说明 | Output
+
+平台输出包括：
+
+- **系统概览仪表板**：关键指标卡片、状态监控
+- **能量平衡分析**：逐时供需曲线、Sankey 能量流图
+- **经济性评估**：NPV、IRR、LCOE、投资回收期
+- **敏感性分析**：参数变化对系统性能的影响
+- **可视化报告**：3D 能量流动、热力图、雷达图、瀑布图
+
+---
+
+## 安装与运行 | Installation
+
+### 系统要求
+
+- Python 3.8 或更高版本
+- 4GB+ RAM
+- 现代浏览器（Chrome 90+, Firefox 88+, Safari 14+）
+- 网络连接（获取气象数据）
+
+### 安装
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### **启动方式**
+### 运行
 
-#### 🖱️ **Windows一键启动**（推荐）
-```cmd
-# 双击运行或命令行执行
-.\start.bat
-```
-
-#### 🌐 **通用启动方式**
 ```bash
-# 标准启动命令
 streamlit run app.py
-
-# 自定义端口启动
-streamlit run app.py --server.port 8502
-
-# 允许外部访问
-streamlit run app.py --server.address 0.0.0.0
 ```
 
-### **访问应用**
-- **本地访问**: http://localhost:8501
-- **网络访问**: http://你的IP地址:8501
-
-### **验证安装**
-启动成功后，您将看到：
-- 现代化的渐变色界面设计
-- 左侧智能配置向导面板
-- 顶部系统状态仪表板
-- 无任何错误或警告信息
-
-## 📁 项目结构
-
-```
-智能微电网规划分析平台/
-├── app.py                          # 🚀 主应用入口
-├── start.bat                       # 🖱️ Windows一键启动
-├── requirements.txt                # 📦 依赖包列表
-├── README.md                       # 📖 项目说明
-└── modules/                        # 📂 核心功能模块
-    ├── config.py                   # ⚙️ 配置管理
-    ├── validation.py               # ✅ 输入验证
-    ├── data_handler.py             # 📊 数据处理
-    ├── simulation_engine.py        # 🔬 仿真引擎
-    ├── results_analyzer.py         # 📈 结果分析
-    ├── ui_components.py            # 🎨 基础UI组件
-    ├── advanced_ui.py              # 🎭 高级UI组件
-    ├── advanced_visualization.py   # 📊 高级可视化
-    ├── async_processor.py          # ⚡ 异步处理
-    ├── error_handler.py            # 🛡️ 错误处理
-    ├── memory_optimizer.py         # 💾 内存优化
-    ├── performance.py              # 📊 性能监控
-    └── utils.py                    # 🔧 通用工具
-```
-
-## 📊 使用指南
-
-### **操作流程**
-
-#### 1️⃣ **智能参数配置**
-- **🌍 地理位置设置** - 输入矿区经纬度，支持地图预览
-- **⚡ 负荷参数配置** - 选择作业模式（连续/两班制/三班制），设置年用电量
-- **🌞 可再生能源配置** - 设置光伏装机容量，选择风机型号和数量
-- **🔋 储能系统设计** - 配置电池容量和功率，自动计算C倍率
-- **💰 经济参数设置** - 输入购售电价格，查看价差分析
-
-#### 2️⃣ **一键智能计算**
-- 点击"开始模拟"按钮启动计算
-- 实时显示6个计算步骤的详细进度
-- 异步计算确保界面始终响应
-- 支持任务取消和重新计算
-
-#### 3️⃣ **多维度结果分析**
-- **📊 KPI仪表板** - 关键绩效指标总览和评估
-- **📈 高级图表** - 雷达图性能分析和动画时序图
-- **🌐 3D分析** - 立体能量流动轨迹，支持交互操作
-- **🔥 热力图** - 全年8760小时运行模式可视化
-- **💧 能量流** - 瀑布图显示能量平衡和流向
-
-### **界面功能**
-
-#### **智能配置向导**
-- ✅ 4步骤引导配置流程
-- ✅ 实时参数验证和提示
-- ✅ 配置预览和智能建议
-- ✅ 一键重置和保存配置
-
-#### **系统状态监控**
-- 🟢 **系统状态** - 运行状态实时显示
-- 🔵 **计算引擎** - 仿真引擎就绪状态
-- 🟢 **数据连接** - API连接状态监控
-- 🟢 **内存状态** - 系统资源使用监控
-
-#### **高级可视化交互**
-- 🖱️ **3D图表操作** - 拖拽旋转、滚轮缩放、双击重置
-- ⏯️ **动画控制** - 播放/暂停、时间轴滑块、速度调节
-- 🔍 **图表缩放** - 支持区域选择、平移、悬停详情
-- 📥 **数据导出** - 支持图表保存和数据下载
-
-## 🎯 核心优势
-
-### **🔬 技术领先性**
-- **🔋 精确建模引擎** - 8760小时逐时仿真，基于真实气象数据的专业级建模
-- **⚡ 高性能架构** - 异步计算、智能缓存、内存优化，支持大规模数据处理
-- **🛡️ 企业级稳定性** - 智能错误处理、自动重试机制、完善的异常恢复
-- **📊 专业分析算法** - 多维度KPI计算、经济性深度评估、智能优化建议
-
-### **🎨 用户体验优势**
-- **🎭 现代化界面设计** - 企业级渐变设计、响应式布局、动画交互效果
-- **🎯 智能操作流程** - 4步骤配置向导、实时参数验证、一键启动计算
-- **📈 沉浸式可视化** - 3D交互图表、动画时序分析、专业级数据展示
-- **🔍 直观结果呈现** - 多标签页分析、KPI仪表板、详细数据导出
-
-### **💼 商业应用价值**
-- **🎯 决策支持** - 基于科学建模的可靠决策依据和投资风险评估
-- **💰 经济效益** - 精确的成本效益分析、投资回收期计算、盈利能力评估
-- **🌱 绿色发展** - 可再生能源渗透率优化、碳减排效果量化分析
-- **🔧 系统优化** - 智能配置建议、性能瓶颈识别、运营策略优化
-
-### **🚀 技术创新点**
-- **🌐 3D可视化技术** - 立体数据展示，突破传统2D图表局限
-- **🎬 动画时序分析** - 时间轴播放控制，直观展示系统动态变化
-- **🔄 异步计算架构** - 非阻塞用户界面，企业级的计算体验
-- **🧠 智能数据验证** - 自动字段检查、数据完整性保证、错误自动修复
-
-## 🔧 技术架构
-
-### **核心技术栈**
-- **前端框架**: Streamlit 1.28+ (现代化Web应用框架)
-- **可视化引擎**: Plotly 5.0+ (专业级交互式图表库)
-- **数据处理**: Pandas, NumPy (高性能数据分析)
-- **科学计算**: SciPy (数值计算和优化算法)
-- **异步处理**: Python Threading (多线程异步计算)
-- **气象数据**: Open-Meteo API (实时气象数据服务)
-
-### **架构特点**
-- **🏗️ 模块化设计** - 13个专业功能模块，职责清晰，易于维护扩展
-- **⚙️ 配置驱动** - 集中配置管理，支持灵活定制和参数调优
-- **🔌 插件式架构** - 易于扩展新功能、新图表类型和新分析算法
-- **🛡️ 防御性编程** - 完善的错误处理、数据验证和异常恢复机制
-
-## 📈 应用场景
-
-### **适用行业**
-- **⛏️ 矿业企业** - 矿区微电网规划、可再生能源配置优化
-- **🏭 工业园区** - 分布式能源系统设计、能源成本优化
-- **🏢 商业综合体** - 屋顶光伏配置、储能系统经济性分析
-- **🌾 农业设施** - 农光互补项目规划、灌溉系统能源优化
-
-### **典型应用**
-- **📊 可行性研究** - 项目前期技术经济可行性分析和评估
-- **💰 投资决策** - 基于精确建模的投资风险评估和收益预测
-- **🔧 系统优化** - 现有微电网系统的性能分析和优化改进
-- **📋 方案对比** - 多种配置方案的技术经济对比分析
-
-## ⚠️ 注意事项
-
-### **数据准确性**
-- 气象数据依赖Open-Meteo API，需要稳定的网络连接
-- 建议使用最近3年的气象数据以确保分析准确性
-- 负荷数据基于典型曲线，实际应用时建议结合现场数据
-
-### **计算性能**
-- 8760小时仿真计算较为耗时，建议在配置较好的设备上运行
-- 大规模参数扫描分析时，建议分批次进行计算
-- 定期清理浏览器缓存以保持最佳性能
-
-### **结果解读**
-- 分析结果仅供参考，实际项目需结合现场条件综合考虑
-- 经济性分析基于当前电价和设备成本，需根据实际情况调整
-- 建议结合专业工程师意见进行最终决策
-
-## 🤝 贡献指南
-
-我们欢迎社区贡献！您可以通过以下方式参与：
-
-### **代码贡献**
-1. Fork 本项目到您的GitHub账户
-2. 创建功能分支: `git checkout -b feature/新功能名称`
-3. 提交更改: `git commit -m '添加某某功能'`
-4. 推送分支: `git push origin feature/新功能名称`
-5. 创建Pull Request
-
-### **问题反馈**
-- 🐛 **Bug报告** - 详细描述问题现象、复现步骤和系统环境
-- 💡 **功能建议** - 提出新功能需求和改进建议
-- 📖 **文档改进** - 帮助完善文档和使用说明
-
-### **开发规范**
-- 遵循PEP 8 Python代码规范
-- 添加必要的注释和文档字符串
-- 确保新功能有相应的测试用例
-- 保持代码的模块化和可维护性
-
-## 📞 技术支持
-
-### **获取帮助**
-- 📧 **邮箱支持** - 发送详细问题描述到技术支持邮箱
-- 💬 **在线讨论** - 在GitHub Issues中提出问题和建议
-- 📚 **文档资源** - 查看项目Wiki和技术文档
-
-### **常见问题**
-- **启动失败** - 检查Python版本和依赖包安装
-- **计算错误** - 验证输入参数的合理性和完整性
-- **性能问题** - 检查系统内存和网络连接状态
-- **显示异常** - 尝试清理浏览器缓存或更换浏览器
-
-## 📄 许可证
-
-本项目采用 **MIT License** 开源许可证。
-
-您可以自由地：
-- ✅ 使用、复制、修改和分发本软件
-- ✅ 用于商业和非商业目的
-- ✅ 在遵循许可证条款的前提下进行二次开发
+或双击 `start.bat`（Windows）。
 
 ---
 
-<div align="center">
+## Docker 使用 | Docker Usage
 
-**⚡ 专业 • 高效 • 创新 ⚡**
+本项目是 Streamlit Web 应用，完全适合 Docker 部署。
 
-*让微电网规划变得简单而精确*
+```bash
+# 构建镜像
+docker build -t mine-microgrid .
 
-**🌟 如果这个项目对您有帮助，请给我们一个Star！🌟**
+# 验证导入
+docker run --rm mine-microgrid
 
-</div>
+# 启动 Web 服务
+docker run -p 8501:8501 mine-microgrid streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+```
+
+启动后访问 http://localhost:8501。
+
+---
+
+## 项目结构 | Project Structure
+
+```
+Mine_Sicrogrid_Simulator/
+├── app.py                  # Streamlit 主应用
+├── requirements.txt        # Python 依赖
+├── Dockerfile              # Docker 构建文件
+├── LICENSE                 # MIT 许可证
+├── .gitignore              # Git 忽略规则
+├── .editorconfig           # 编辑器配置
+├── CHANGELOG.md            # 变更日志
+├── README.md               # 项目说明
+├── scripts/
+│   └── docker_smoke_test.py # Docker 导入验证
+├── docs/
+│   └── index.md            # GitHub Pages 入口
+├── modules/
+│   ├── __init__.py
+│   ├── advanced_ui.py
+│   ├── advanced_visualization.py
+│   ├── async_processor.py
+│   ├── config.py
+│   ├── data_handler.py
+│   ├── error_handler.py
+│   ├── memory_optimizer.py
+│   ├── performance.py
+│   ├── results_analyzer.py
+│   ├── simulation_engine.py
+│   ├── ui_components.py
+│   ├── utils.py
+│   └── validation.py
+└── start.bat               # Windows 启动脚本
+```
+
+---
+
+## 引用 | Citation
+
+```bibtex
+@software{mine_microgrid2026,
+  title = {Mine Microgrid Simulator},
+  year = {2026},
+  url = {https://github.com/Phoenix0531-sudo/Mine_Sicrogrid_Simulator}
+}
+```
+
+---
+
+## 许可证 | License
+
+本项目基于 MIT 许可证开源。详见 [LICENSE](LICENSE) 文件。
+
+> This project is open-sourced under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center"><strong>Made for the renewable energy and mining community</strong></div>

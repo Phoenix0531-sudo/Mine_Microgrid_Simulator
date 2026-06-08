@@ -1,22 +1,15 @@
-# -*- coding: utf-8 -*-
 """
-矿区可再生能源与微电网规划模拟器 - 功能模块包
+Mine Microgrid Simulator - Core Modules
 
-这个包包含了微电网规划模拟器的所有核心功能模块：
-- 输入验证模块 (validation.py)
-- 数据加载模块 (data_loader.py)
-- 能源建模模块 (energy_modeling.py)
-- 调度模拟模块 (simulation.py)
-- 可视化分析模块 (visualization.py)
-
-作者: Your Name
-版本: 1.0.0
-日期: 2024-01-15
+This package contains all core modules for the mine microgrid planning simulator:
+- Input validation (validation.py)
+- Data loading (data_handler.py)
+- Energy modeling (simulation_engine.py)
+- Simulation and dispatching (simulation.py)
+- Visualization and analysis (results_analyzer.py)
 """
 
 __version__ = "1.0.0"
-__author__ = "Your Name"
-__email__ = "your-email@example.com"
 
 # 导入所有模块的主要函数，方便外部调用
 try:
@@ -111,7 +104,7 @@ __package_info__ = {
     "name": "矿区可再生能源与微电网规划模拟器模块包",
     "description": "专业的微电网规划分析工具核心功能模块",
     "version": __version__,
-    "author": __author__,
+    "author": "Project Contributors",
     "modules": [
         "validation - 输入验证模块",
         "data_handler - 数据处理模块",

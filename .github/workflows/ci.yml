@@ -13,9 +13,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m compileall .
       - name: Import smoke test
-        run: |
-          python -c "
-import sys; sys.path.insert(0, '.')
-from modules.config import get_config
-print('modules import OK')
-" || true
+        run: python -c "import sys; sys.path.insert(0, '.'); from modules.config import get_config; print('modules import OK')" || true

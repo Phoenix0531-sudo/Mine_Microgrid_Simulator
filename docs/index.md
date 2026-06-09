@@ -33,7 +33,7 @@ docker run -p 8501:8501 mine-microgrid python -m streamlit run app.py --server.p
 
 ## Repository
 
-<https://github.com/Phoenix0531-sudo/Mine_Sicrogrid_Simulator>
+<https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator>
 
 ## License
 

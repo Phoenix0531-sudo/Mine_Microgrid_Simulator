@@ -159,7 +159,7 @@ docker run -p 8501:8501 mine-microgrid streamlit run app.py --server.port 8501 -
 ## 项目结构 | Project Structure
 
 ```
-Mine_Sicrogrid_Simulator/
+Mine_Microgrid_Simulator/
 ├── app.py                  # Streamlit 主应用
 ├── requirements.txt        # Python 依赖
 ├── Dockerfile              # Docker 构建文件
@@ -198,7 +198,7 @@ Mine_Sicrogrid_Simulator/
 @software{mine_microgrid2026,
   title = {Mine Microgrid Simulator},
   year = {2026},
-  url = {https://github.com/Phoenix0531-sudo/Mine_Sicrogrid_Simulator}
+  url = {https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator}
 }
 ```
 

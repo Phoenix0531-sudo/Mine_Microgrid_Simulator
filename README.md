@@ -2,6 +2,12 @@
 
 # Mine Microgrid Simulator
 
+**Professional microgrid planning and analysis platform with Streamlit and Plotly**
+
+[English](README.md) | [中文](README.zh-CN.md)
+
+![CI](https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator/actions/workflows/ci.yml/badge.svg)
+
 **矿区微电网规划分析平台 | Professional Microgrid Planning and Analysis Platform**
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)

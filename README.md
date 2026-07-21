@@ -219,3 +219,7 @@ Mine_Microgrid_Simulator/
 ---
 
 <div align="center"><strong>Made for the renewable energy and mining community</strong></div>
+
+## License
+
+[MIT](LICENSE) — free for commercial use with attribution.

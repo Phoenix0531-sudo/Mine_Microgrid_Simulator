@@ -1,26 +1,28 @@
 # Mine Microgrid Simulator
 
-**矿区可再生 + 微电网情景的 Streamlit 规划器**
+**面向矿山场景的微电网规划与分析演示（Streamlit + Plotly）。**
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-![CI](https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator/actions/workflows/ci.yml/badge.svg)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+[![CI](https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 
-交互式 **Streamlit** 应用：对矿区可再生发电与微电网调度做粗规划——负荷曲线、风光功率估算、仿真运行与结果面板。
+面向矿山场景的微电网规划与分析演示（Streamlit + Plotly）。
 
-## 为什么做这个
+交互图表 · 场景模块。
 
-矿区能源规划在上完整电力系统软件前，需要快速情景工具。本应用把负荷/气象辅助与仿真引擎收进浏览器 UI。
 
 ## 功能
 
-- 侧栏情景输入与校验  
-- 光伏 / 风电估算模块  
-- 异步任务与进度 UI 钩子  
-- 结果分析视图  
+- ⚡ 微电网规划向模块
+- 📊 Plotly 交互图
+- 🌐 Streamlit 入口
+- ✅ CI 冒烟 + 测试
 
-## 安装
+## 快速开始
+
+### 安装
 
 ```bash
 git clone https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator.git
@@ -28,26 +30,24 @@ cd Mine_Microgrid_Simulator
 pip install -r requirements.txt
 ```
 
-## 使用
+### 使用
 
 ```bash
-streamlit run app.py
-# Windows 也可用 start.bat
+streamlit run app.py   # 或见 modules/ 文档入口
+pytest tests/
 ```
 
-## 目录结构
+## 项目结构
 
 ```
-app.py
-modules/
-tests/
+modules/  scripts/
+tests/  docs/
 ```
 
-## 明确不做
+## 说明
 
-- 非认证电网研究软件  
-- 非实时 EMS / SCADA  
+工程研究演示 — 非并网规范合规产品。
 
 ## 许可证
 
-MIT。可在署名前提下商用。见 [LICENSE](LICENSE)。
+MIT。在注明出处的前提下可商业使用（以 LICENSE 为准）。详见 [LICENSE](LICENSE)。

@@ -1,53 +1,37 @@
 # Mine Microgrid Simulator
 
-**Streamlit + Plotly microgrid planning demo for mining scenarios.**
+**Streamlit + Plotly microgrid planning demo for mining load / generation scenarios.**
 
 [English](README.md) | [中文](README.zh-CN.md)
 
 [![CI](https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Interactive charts and scenario modules for engineering study.
+Engineering study UI: scenario modules under `modules/`, interactive charts via Plotly, Streamlit entry for what-if dispatch and cost sketches. Not a grid-code compliance product.
 
 ## Preview
 
 ![Mine Microgrid Simulator](docs/screenshots/preview.png)
 
-## Features
+## Layout
 
-- Microgrid planning oriented modules
-- Plotly interactive charts
-- Streamlit app entry
-- CI smoke + tests
+```
+modules/     # planning / analysis modules
+scripts/
+tests/
+docs/
+```
 
-## Get started
-
-### Install
+## Install / run
 
 ```bash
 git clone https://github.com/Phoenix0531-sudo/Mine_Microgrid_Simulator.git
 cd Mine_Microgrid_Simulator
 pip install -r requirements.txt
-```
-
-### Usage
-
-```bash
-streamlit run app.py
+streamlit run app.py   # or entry documented in modules/
 pytest tests/
 ```
 
-## Project layout
-
-```
-modules/  scripts/
-tests/  docs/
-```
-
-## Notes
-
-Engineering study demo, not a grid-code compliance product.
-
 ## License
 
-MIT. Free for commercial use with attribution where applicable. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
